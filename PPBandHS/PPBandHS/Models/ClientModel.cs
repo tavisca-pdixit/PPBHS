@@ -20,10 +20,12 @@ namespace PPBandHS.Models
 
         public string Address { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}",
+            ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
     }
 
-    public class ClientsContext : DbContext
+    public class ClientDbContext : DbContext
     {
         public DbSet<ClientModel> Clients { get; set; }
     }
